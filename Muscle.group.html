@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscle Groups</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .button-container {
+            margin: 20px 0;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .button-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Muscle Groups for Bodybuilding</h2>
+<h2 style="color: blue; text-align: center;">CBSA ALLN</h2>
+
+<div class="button-container">
+    <button onclick="printTable()">Print</button>
+    <button onclick="copyTable()">Copy</button>
+</div>
+
+<table id="muscleTable">
+    <tr>
+        <th>Muscle Group</th>
+        <th>English</th>
+        <th>Arabic</th>
+    </tr>
+    <tr>
+        <td>Chest</td>
+        <td>Pectoralis Major, Pectoralis Minor</td>
+        <td>الصدر الكبير, الصدر الصغير</td>
+    </tr>
+    <tr>
+        <td>Back</td>
+        <td>Latissimus Dorsi, Trapezius, Rhomboids, Erector Spinae</td>
+        <td>لاتسيموس دورسي, شبه المنحرف, المعينات, العضلات المقيمة</td>
+    </tr>
+    <tr>
+        <td>Shoulders</td>
+        <td>Anterior Deltoid, Lateral Deltoid, Posterior Deltoid</td>
+        <td>الدالية الأمامية, الدالية الجانبية, الدالية الخلفية</td>
+    </tr>
+    <tr>
+        <td>Arms</td>
+        <td>Biceps Brachii, Triceps Brachii, Brachialis, Forearms</td>
+        <td>العضلة ذات الرأسين, العضلة ثلاثية الرؤوس, العضلة العضدية, السواعد</td>
+    </tr>
+    <tr>
+        <td>Abdominals</td>
+        <td>Rectus Abdominis, Obliques, Transversus Abdominis</td>
+        <td>المستقيم البطني, المائل, المستعرض البطني</td>
+    </tr>
+    <tr>
+        <td>Lower Back</td>
+        <td>Erector Spinae</td>
+        <td>العضلات المقيمة</td>
+    </tr>
+    <tr>
+        <td>Legs</td>
+        <td>Quadriceps, Hamstrings, Calves, Gluteals, Adductors</td>
+        <td>عضلات الفخذ الأمامية, أوتار الركبة, العجول, الألوية, المقربات</td>
+    </tr>
+    <tr>
+        <td>Neck</td>
+        <td>Sternocleidomastoid, Scalenes</td>
+        <td>القصي الترقوي الخشائي, العضلات السلمية</td>
+    </tr>
+</table>
+
+<script>
+    function printTable() {
+        window.print();
+    }
+
+    function copyTable() {
+        const table = document.getElementById('muscleTable');
+        const range = document.createRange();
+        range.selectNode(table);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        alert('Table copied to clipboard');
+    }
+</script>
+
+</body>
+</html>
